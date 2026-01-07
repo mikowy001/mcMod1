@@ -1,5 +1,6 @@
 package net.mikowy.mod1;
 
+import net.mikowy.mod1.block.ModBlocks;
 import net.mikowy.mod1.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +24,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Mod1.MOD_ID)
 public class Mod1 {
-    // Define mod id in a common place for everything to reference
+    // definujemy mod id zeby mozna reference robic
     public static final String MOD_ID = "mikowymod";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -40,7 +41,9 @@ public class Mod1 {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        //registerujemy wszystkie itemy z moda do mc
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -57,6 +60,9 @@ public class Mod1 {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.LEAD_INGOT);
             event.accept(ModItems.RAW_LEAD);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.LEAD_BLOCK);
         }
     }
 
