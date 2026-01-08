@@ -2,9 +2,11 @@ package net.mikowy.mod1.block;
 
 import net.mikowy.mod1.Mod1;
 import net.mikowy.mod1.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -23,6 +25,13 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.COPPER)
             ));
+
+    public static final DeferredBlock<Block> LEAD_ORE = registerBlock("lead_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2,4),
+                    BlockBehaviour.Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
