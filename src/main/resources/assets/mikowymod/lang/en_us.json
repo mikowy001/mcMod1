@@ -1,7 +1,10 @@
 {
   "item.mikowymod.lead_ingot": "Lead Ingot",
   "item.mikowymod.raw_lead": "Raw Lead",
+  "item.mikowymod.lead_nugget": "Lead Nugget",
 
   "block.mikowymod.lead_block": "Block of Lead",
-  "block.mikowymod.lead_ore": "Lead Ore"
+  "block.mikowymod.lead_ore": "Lead Ore",
+
+  "creativetab.mikowymod.items": "Mikowy Mod"
 }

@@ -1,8 +1,11 @@
 package net.mikowy.mod1;
 
 import net.mikowy.mod1.block.ModBlocks;
+import net.mikowy.mod1.item.ModCreativeModeTabs;
 import net.mikowy.mod1.item.ModItems;
+
 import net.minecraft.world.item.CreativeModeTabs;
+
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -41,6 +44,8 @@ public class Mod1 {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         //registerujemy wszystkie itemy z moda do mc
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -55,11 +60,16 @@ public class Mod1 {
     private void commonSetup(FMLCommonSetupEvent event) {
     }
 
-    // dodajemy lead ingot do zakladki creative INGREDIENTS
+
+
+    // dodajemy itemy i bloki do zakladki creative
     private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event) {
+
+
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.LEAD_INGOT);
             event.accept(ModItems.RAW_LEAD);
+            event.accept(ModItems.LEAD_NUGGET);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.LEAD_BLOCK);
