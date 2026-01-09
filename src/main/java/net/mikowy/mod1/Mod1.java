@@ -6,6 +6,7 @@ import net.mikowy.mod1.item.ModItems;
 
 import net.minecraft.world.item.CreativeModeTabs;
 
+import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
@@ -55,6 +56,8 @@ public class Mod1 {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        System.out.println(HitResult.Type.ENTITY);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

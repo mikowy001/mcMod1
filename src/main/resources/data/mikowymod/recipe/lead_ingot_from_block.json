@@ -4,11 +4,11 @@
   "ingredients":
   [
     {
-      "item": "mikowymod:lead_ingot"
+      "item": "mikowymod:lead_block"
     }
   ],
   "result": {
     "count": 9,
-    "id": "mikowymod:lead_nugget"
+    "id": "mikowymod:lead_ingot"
   }
 }
