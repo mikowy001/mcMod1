@@ -68,8 +68,9 @@ public class Mod1 {
     // dodajemy itemy i bloki do zakladki creative
     private void addCreative(@NotNull BuildCreativeModeTabContentsEvent event) {
 
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! deleted cuz i moved everything to custom creative tab
 
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        /*if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.LEAD_INGOT);
             event.accept(ModItems.RAW_LEAD);
             event.accept(ModItems.LEAD_NUGGET);
@@ -79,7 +80,8 @@ public class Mod1 {
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.LEAD_ORE);
-        }
+        }*/
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

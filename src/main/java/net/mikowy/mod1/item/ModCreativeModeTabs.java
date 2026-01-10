@@ -25,8 +25,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.LEAD_INGOT);
                 output.accept(ModItems.LEAD_NUGGET);
                 output.accept(ModItems.RAW_LEAD);
+                output.accept(ModItems.CHISEL);
                 output.accept(ModBlocks.LEAD_BLOCK);
                 output.accept(ModBlocks.LEAD_ORE);
+                output.accept(ModBlocks.ASPHALT);
             })
             .build());
 

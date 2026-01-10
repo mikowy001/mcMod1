@@ -2,6 +2,7 @@ package net.mikowy.mod1.block;
 
 import net.mikowy.mod1.Mod1;
 import net.mikowy.mod1.item.ModItems;
+import net.mikowy.mod1.item.custom.AsphaltBlock;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -37,6 +38,11 @@ public class ModBlocks {
                             .sound(SoundType.STONE)));
 
 
+    public static final DeferredBlock<Block> ASPHALT = registerBlock("asphalt",
+            () -> new AsphaltBlock(BlockBehaviour.Properties.of()
+                    .strength(3f)
+                    .sound(SoundType.BASALT)
+            ));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
