@@ -38,6 +38,7 @@ public class ModBlocks {
                             .sound(SoundType.STONE)));
 
 
+
     public static final DeferredBlock<Block> ASPHALT = registerBlock("asphalt",
             () -> new AsphaltBlock(BlockBehaviour.Properties.of()
                     .strength(3f)

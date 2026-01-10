@@ -12,11 +12,7 @@ public class AsphaltBlock extends Block {
 
     @Override
     public float getSpeedFactor() {
-        return super.getSpeedFactor() * 1.5f;
+        return super.getSpeedFactor() * 1.4f;
     }
 
-    @Override
-    public float getFriction() {
-        return super.getFriction() * 0.1f;
-    }
 }

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "blocks",
+  "key": {
+    "L": {
+      "item": "mikowymod:lead_ingot"
+    },
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "A": {
+      "item": "minecraft:smooth_basalt"
+    }
+
+  },
+  "pattern": [
+    "ABA",
+    "BLB",
+    "ABA"
+  ],
+  "result": {
+    "count": 4,
+    "id": "mikowymod:asphalt"
+  }
+}
