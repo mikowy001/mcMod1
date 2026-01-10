@@ -4,7 +4,7 @@ import net.mikowy.mod1.Mod1;
 import net.mikowy.mod1.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -26,10 +26,13 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.LEAD_NUGGET);
                 output.accept(ModItems.RAW_LEAD);
                 output.accept(ModItems.CHISEL);
+                output.accept(ModItems.RADISH);
+
                 output.accept(ModBlocks.LEAD_BLOCK);
                 output.accept(ModBlocks.LEAD_ORE);
                 output.accept(ModBlocks.ASPHALT);
                 output.accept(ModBlocks.MAGIC_BLOCK);
+
             })
             .build());
 
