@@ -43,10 +43,14 @@ public class ChiselItem extends Item {
                 level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
                 //poziom ustaw block i zupdatuj w pozycji nacisniecia i ustaw na block z mapy
 
-                context.getItemInHand().hurtAndBreak(
-                        1,
-                        ((ServerLevel) level), context.getPlayer(),
-                        item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                assert context.getPlayer() != null;
+                if(!context.getPlayer().isCreative()){
+                    context.getItemInHand().hurtAndBreak(
+                            1,
+                            ((ServerLevel) level), context.getPlayer(),
+                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                }
+
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
             }

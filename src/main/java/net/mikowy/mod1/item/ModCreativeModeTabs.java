@@ -29,6 +29,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.LEAD_BLOCK);
                 output.accept(ModBlocks.LEAD_ORE);
                 output.accept(ModBlocks.ASPHALT);
+                output.accept(ModBlocks.MAGIC_BLOCK);
             })
             .build());
 

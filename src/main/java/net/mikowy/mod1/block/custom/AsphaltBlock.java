@@ -1,7 +1,9 @@
-package net.mikowy.mod1.item.custom;
+package net.mikowy.mod1.block.custom;
+
 
 
 import net.minecraft.world.level.block.Block;
+
 
 
 public class AsphaltBlock extends Block {
@@ -14,5 +16,6 @@ public class AsphaltBlock extends Block {
     public float getSpeedFactor() {
         return super.getSpeedFactor() * 1.4f;
     }
+
 
 }
