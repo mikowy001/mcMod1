@@ -1,0 +1,14 @@
+{
+  "item.mikowymod.lead_ingot": "Sztabka ołowiu",
+  "item.mikowymod.raw_lead": "Surowy ołów",
+  "item.mikowymod.lead_nugget": "Samorodek ołowiu",
+  "item.mikowymod.chisel": "Dłuto",
+  "item.mikowymod.radish": "Rzodkiewka",
+
+  "block.mikowymod.lead_block": "Blok ołowiu",
+  "block.mikowymod.lead_ore": "Ruda ołowiu",
+  "block.mikowymod.asphalt": "Asfalt",
+  "block.mikowymod.magic_block": "Magiczny blok",
+
+  "creativetab.mikowymod.items": "Mikowy mod"
+}

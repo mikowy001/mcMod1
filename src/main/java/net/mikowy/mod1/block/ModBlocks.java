@@ -1,6 +1,7 @@
 package net.mikowy.mod1.block;
 
 import net.mikowy.mod1.Mod1;
+import net.mikowy.mod1.block.custom.BlockDestroyerBlock;
 import net.mikowy.mod1.block.custom.MagicBlock;
 import net.mikowy.mod1.item.ModItems;
 import net.mikowy.mod1.block.custom.AsphaltBlock;
@@ -51,6 +52,12 @@ public class ModBlocks {
             () -> new MagicBlock(BlockBehaviour.Properties.of()
                     .strength(4f)
                     .sound(SoundType.ANVIL)
+            ));
+
+    public static final DeferredBlock<Block> BLOCK_DESTROYER = registerBlock("block_destroyer",
+            () -> new BlockDestroyerBlock(BlockBehaviour.Properties.of()
+                    .strength(3f)
+                    .sound(SoundType.CHAIN)
             ));
 
 
