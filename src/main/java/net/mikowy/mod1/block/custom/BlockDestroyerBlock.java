@@ -52,6 +52,7 @@ public class BlockDestroyerBlock extends Block {
         builder.add(LIT);
     }
 
+    //sss
     @Override
     protected void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
         if (!level.isClientSide) {
