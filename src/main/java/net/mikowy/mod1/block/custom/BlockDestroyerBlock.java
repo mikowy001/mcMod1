@@ -2,6 +2,10 @@ package net.mikowy.mod1.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -19,7 +23,15 @@ public class BlockDestroyerBlock extends Block {
             simpleCodec(BlockDestroyerBlock::new);
 
 
+    @Override
+    protected boolean isSignalSource(BlockState state) {
+        return true;
+    }
 
+    @Override
+    protected int getSignal(BlockState state, BlockGetter level, BlockPos pos, Direction side) {
+        return state.getValue(LIT) ? 15 : 0;
+    }
 
     @Override
     protected @NotNull MapCodec<? extends Block> codec() {
@@ -46,17 +58,25 @@ public class BlockDestroyerBlock extends Block {
             boolean flag = state.getValue(LIT);
             boolean powered = level.hasNeighborSignal(pos);
 
-            if (flag != powered) {
-                if (powered) {
-                    if(level.getBlockState(fromPos))
-                    level.setBlock(pos, Blocks.AIR.defaultBlockState(), 2);
-                } else {
-                    level.setBlock(pos, state.setValue(LIT, true), 2);
-
-                }
+            if (powered == true && flag == false) {
+                level.setBlock(pos, state.setValue(LIT, true), BlockDestroyerBlock.UPDATE_CLIENTS);
+                level.scheduleTick(pos, this, 2);
             }
-
-        }
         }
     }
+
+
+    @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        level.updateNeighborsAt(pos, this);
+        level.destroyBlock(pos, true);
+    }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        if(!level.isClientSide && !state.is(oldState.getBlock())){
+            this.neighborChanged(state, level, pos, this, pos, movedByPiston);
+        }
+    }
+}
 
